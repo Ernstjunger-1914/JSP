@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<footer>
-			<h3>HRDKOREA Copyright&copy;2020 All rights reserved,. Human Resource Development Service of korea</h3>
+			<h3>HRDKOREA Copyright&copy;2020 All rights reserved. Human Resource Development Service of korea</h3>
 		</footer>
 	</body>
 </html>

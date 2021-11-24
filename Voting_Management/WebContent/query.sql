@@ -65,10 +65,12 @@ insert into tbl_vote_202005 values('8901012000022', '전유권', '3', '1330', '�
 
 commit;
 
-
 select m_no, m_name, p_name, p_school, substr(m_jumin, 1,6)||'-'||substr(m_jumin, 7, 7), m_city, p_tel1||'-'||p_tel2||'-'||p_tel3 from tbl_party_202005 p, tbl_member_202005 m where p.p_code=m.p_code;
+select m_no, m_name, p_name, decode(p_school, '1', '고졸', '2', '학사', '3', '석사') as p_school, substr(m_jumin, 1,6)||'-'||substr(m_jumin, 7, 7) as m_jumin, m_city, p_tel1||'-'||p_tel2||'-'||p_tel3 as tel from tbl_party_202005 p, tbl_member_202005 m where p.p_code=m.p_code;
 
 select v_name, 19||substr(v_jumin, 1, 2)||'년'||substr(v_jumin, 3, 2)||'월'||substr(v_jumin, 5, 2)||'일', substr(v_jumin, 1, 2), substr(v_jumin, 7, 1), m_no, substr(v_time, 1, 2)||':'||substr(v_time, 3, 2), v_confirm from tbl_vote_202005;
 select v_name name, 19||substr(v_jumin, 1, 2)||'년'||substr(v_jumin, 3, 2)||'월'||substr(v_jumin, 5, 2)||'일' birth, substr(v_jumin, 1, 2) birth2, substr(v_jumin, 7, 1) jumin, m_no vote, substr(v_time, 1, 2)||':'||substr(v_time, 3, 2) time, v_confirm yn from tbl_vote_202005;
+select v_name name, 19||substr(v_jumin, 1, 2)||'년'||substr(v_jumin, 3, 2)||'월'||substr(v_jumin, 5, 2)||'일' birth, substr(v_jumin, 1, 2) birth2, decode(substr(v_jumin, 7, 1), '1', '남', '2', '여', '3', '남', '4', '여') jumin, m_no vote, substr(v_time, 1, 2)||':'||substr(v_time, 3, 2) time, decode(v_confirm, 'Y', '확인', 'N', '미확인') from tbl_vote_202005;
+select v_name, 19||substr(v_jumin, 1, 2)||'년'||substr(v_jumin, 3, 2)||'월'||substr(v_jumin, 5, 2)||'일' as bitrh, substr(v_jumin, 1, 2), substr(v_jumin, 7, 1), m_no, substr(v_time, 1, 2)||':'||substr(v_time, 3, 2), decode(v_confirm, 'Y', '확인', 'N', '미확인') from tbl_vote_202005;
 
 select m.m_no, m_name, count(*) cnt from tbl_member_202005 m, tbl_vote_202005 v where m.m_no=v.m_no and v_confirm='Y' group by m.m_no, m.m_name order by cnt desc;
