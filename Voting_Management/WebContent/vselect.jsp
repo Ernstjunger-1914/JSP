@@ -26,7 +26,7 @@
 			</tr>
 		<%
 			try {
-				String sql="select v_name name, 19||substr(v_jumin, 1, 2)||'년'||substr(v_jumin, 3, 2)||'월'||substr(v_jumin, 5, 2)||'일' birth, substr(v_jumin, 1, 2) birth2, substr(v_jumin, 7, 1) jumin, m_no vote, substr(v_time, 1, 2)||':'||substr(v_time, 3, 2) time, decode(v_confirm, 'Y', '확인', 'N', '미확인') from tbl_vote_202005";
+				String sql="select v_name name, decode(substr(v_jumin, 7, 1), '1', '19', '2', '19', '3', '20', '4', '20')||substr(v_jumin, 1, 2)||'년'||substr(v_jumin, 3, 2)||'월'||substr(v_jumin, 5, 2)||'일' birth, substr(v_jumin, 1, 2) birth2, substr(v_jumin, 7, 1) jumin, m_no vote, substr(v_time, 1, 2)||':'||substr(v_time, 3, 2) time, decode(v_confirm, 'Y', '확인', 'N', '미확인') as yn from tbl_vote_202005";
 				PreparedStatement pstmt=con.prepareStatement(sql);
 				ResultSet rs=pstmt.executeQuery();
 				

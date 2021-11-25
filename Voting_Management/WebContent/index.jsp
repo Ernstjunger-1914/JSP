@@ -46,6 +46,7 @@
 		%>
 			<jsp:include page="_index.jsp" />
 		<%
+				break;
 			}
 		%>
 		</section>
