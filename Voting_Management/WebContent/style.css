@@ -26,17 +26,21 @@ nav>ul {
 	margin: 0;
 	width: 100%;
 }
+
 nav>ul>li {
 	display: inline-block;
 	width: 125px;
 }
+
 nav>ul>li>a {
 	text-decoration: none;
 	color: #000;
 }
+
 .home {
 	text-decoration: underline;
 }
+
 section {
 	width: 100%;
 	height: auto;
@@ -44,15 +48,18 @@ section {
 	text-align: center;
 	padding: 15px
 }
+
 table {
 	margin: auto;
 }
+
 footer {
 	width: 100%;
 	padding: 15px;
 	background: #444;
 	text-align: center;
 }
+
 footer>h3 {
 	color: #fff;
 }
