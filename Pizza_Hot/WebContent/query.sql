@@ -39,7 +39,7 @@ insert into TBL_SALELIST_01 values(100001, 'S001', '2018-12-02', 'AA01', 50);
 insert into TBL_SALELIST_01 values(100002, 'S001', '2018-12-02', 'AA02', 30);
 insert into TBL_SALELIST_01 values(100003, 'S001', '2018-12-02', 'AA03', 20);
 insert into TBL_SALELIST_01 values(100004, 'S001', '2018-12-02', 'AA04', 50);
-insert into TBL_SALELIST_01 values(100005, 'S003', '2018-12-03, 'AA01', 40);
+insert into TBL_SALELIST_01 values(100005, 'S003', '2018-12-03', 'AA01', 40);
 insert into TBL_SALELIST_01 values(100006, 'S003', '2018-12-03', 'AA02', 60);
 insert into TBL_SALELIST_01 values(100007, 'S003', '2018-12-03', 'AA04', 60);
 insert into TBL_SALELIST_01 values(100008, 'S003', '2018-12-04', 'AA05', 70);

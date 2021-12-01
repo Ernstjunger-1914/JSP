@@ -4,6 +4,12 @@
 <%@ include file="db.jsp" %>
 <%
 	request.setCharacterEncoding("UTF-8");
+	
+	String pcode=request.getParameter("pcode");
+	String scode=request.getParameter("scode");
+	String sdate=request.getParameter("sdate");
+	String pname=request.getParameter("pname");
+	String amount=request.getParameter("amount");
 %>
 <!DOCTYPE html>
 <html>
@@ -14,7 +20,9 @@
 	<body>
 		<%
 			try {
+				String sql="";
 				
+				con.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}

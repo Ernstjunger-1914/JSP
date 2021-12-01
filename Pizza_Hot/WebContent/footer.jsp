@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<footer>
-			<h3>Copyright @ 2020 All right reserved SSDㄴ</h3>
+			<h3>Copyright @ 2020 All right reserved SSD</h3>
 		</footer>
 	</body>
 </html>

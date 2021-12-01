@@ -14,6 +14,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<jsp:include page="header.jsp" />
@@ -25,6 +26,26 @@
 			case "insert":
 		%>
 			<jsp:include page="insert.jsp" />
+		<%
+				break;
+			case "total":
+		%>
+			<jsp:include page="total.jsp" />
+		<%
+				break;
+			case "sselect":
+		%>
+			<jsp:include page="sselect.jsp" />
+		<%
+				break;
+			case "pselect":
+		%>
+			<jsp:include page="pselect.jsp" />
+		<%
+				break;
+			default:
+		%>
+			<jsp:include page="_index.jsp" />
 		<%
 				break;
 			}
