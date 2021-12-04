@@ -13,20 +13,11 @@
 	</head>
 	<body>
 		<h3>매출전표등록</h3>
-		<%
-			try {
-				String sql="";
-				PreparedStatement pstmt=con.prepareStatement(sql);
-				ResultSet rs=pstmt.executeQuery();
-				rs.next();
-				
-				String num=rs.getString(1);
-		%>
 		<form action="insert_post.jsp" method="post" name="form1">
 			<table border="1">
 				<tr>
 					<td>매출전표번호</td>
-					<td><input type="text" name="pcode" value="<%= %>" required="required"></td>
+					<td><input type="text" name="pcode"></td>
 				</tr>
 				<tr>
 					<td>지점코드</td>
@@ -41,14 +32,14 @@
 					<td>
 						<select name="pname">
 							<option value="">피자선택</option>
-							<option value="A001">[A001] 고르곤졸라피자</option>
-							<option value="A002">[A002] 치즈피자</option>
-							<option value="A003">[A003] 페페로니피자</option>
-							<option value="A004">[A004] 콤비네이션피자</option>
-							<option value="A005">[A005] 고구마피자</option>
-							<option value="A006">[A006] 포테이토피자</option>
-							<option value="A007">[A007] 불고기피자</option>
-							<option value="A008">[A008] 나폴리피자</option>
+							<option value="AA01">[AA01] 고르곤졸라피자</option>
+							<option value="AA02">[AA02] 치즈피자</option>
+							<option value="AA03">[AA03] 페페로니피자</option>
+							<option value="AA04">[AA04] 콤비네이션피자</option>
+							<option value="AA05">[AA05] 고구마피자</option>
+							<option value="AA06">[AA06] 포테이토피자</option>
+							<option value="AA07">[AA07] 불고기피자</option>
+							<option value="AA08">[AA08] 나폴리피자</option>
 						</select>
 					</td>
 				</tr>
@@ -61,14 +52,15 @@
 				</tr>
 			</table>
 		</form>
-		<%
-				} catch(Exception e) {
-					e.printStackTrace();
-				}
-		%>
+		
 		<script type="text/javascript">
 			function subm() {
-				if(form1.scode.value=="") {
+				if(form1.pcode.value=="") {
+					alert("매출전표번호가 입력되지 않았습니다.");
+					form1.pcode.focus();
+					
+					return false;
+				} else if(form1.scode.value=="") {
 					alert("지점코드가 입력되지 않았습니다.");
 					form1.scode.focus();
 					

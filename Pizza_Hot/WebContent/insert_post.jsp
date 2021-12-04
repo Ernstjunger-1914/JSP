@@ -20,8 +20,16 @@
 	<body>
 		<%
 			try {
-				String sql="";
+				String sql="insert into TBL_SALELIST_02 values(?, ?, to_date(?, 'yyyy-mm-dd'), ?, ?)";
+				PreparedStatement pstmt=con.prepareStatement(sql);
 				
+				pstmt.setString(1, pcode);
+				pstmt.setString(2, scode);
+				pstmt.setString(3, sdate);
+				pstmt.setString(4, pname);
+				pstmt.setString(5, amount);
+				
+				pstmt.executeUpdate();
 				con.close();
 			} catch(Exception e) {
 				e.printStackTrace();
