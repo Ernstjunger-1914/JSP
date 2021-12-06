@@ -20,7 +20,7 @@
 	<body>
 		<h3>접종예약조회</h3>
 		
-		<form action="search.jsp" method="post" name="form1">
+		<form action="search.jsp" method=get name="form1">
 			<table border="1">
 				<tr>
 					<td>예약번호를 입력 하시오.</td>

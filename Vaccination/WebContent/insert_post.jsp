@@ -5,12 +5,12 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
-	String resvno=request.getParameter("resvno");
-	String jumin=request.getParameter("jumin");
-	String vcode=request.getParameter("vcode");
+	String resvnum=request.getParameter("resvnum");
+	String jnum=request.getParameter("jnum");
+	String codev=request.getParameter("codev");
 	String hcode=request.getParameter("hcode");
-	String vdate=request.getParameter("vdate");
-	String vtime=request.getParameter("vtime");
+	String datev=request.getParameter("datev");
+	String timev=request.getParameter("timev");
 %>
 <!DOCTYPE html>
 <html>
@@ -24,17 +24,20 @@
 				String sql="insert into tbl_vaccresv_201808 values(?, ?, ?, ?, ?, ?)";
 				PreparedStatement pstmt=con.prepareStatement(sql);
 				
-				pstmt.setString(1, resvno);
-				pstmt.setString(2, jumin);
-				pstmt.setString(3, vcode);
+				pstmt.setString(1, resvnum);
+				pstmt.setString(2, jnum);
+				pstmt.setString(3, codev);
 				pstmt.setString(4, hcode);
-				pstmt.setString(5, vdate);
-				pstmt.setString(6, vtime);
+				pstmt.setString(5, datev);
+				pstmt.setString(6, timev);
 				
 				pstmt.executeUpdate();
-				con.close();
 			} catch(Exception e) {
 				e.printStackTrace();
+			} finally {
+				if(con!=null) {
+					con.close();
+				}
 			}
 		
 			response.sendRedirect("index.jsp?");
