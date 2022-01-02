@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,9 +7,8 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<%
-			Class.forName("oracle.jdbc.OracleDriver");
-			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/xe", "system", "1234");
-		%>
+		<header>
+			<h2>(과정평가형 정보처리산업기사)오디션 관리 프로그램 ver 2019-06</h2>
+		</header>
 	</body>
 </html>
