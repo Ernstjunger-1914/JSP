@@ -27,6 +27,27 @@
 		%>
 			<jsp:include page="insert.jsp" />
 		<%
+				break;
+			case "select":
+		%>
+			<jsp:include page="select.jsp" />
+		<%
+				break;
+			case "mscore":
+		%>
+			<jsp:include page="mscore.jsp" />
+		<%
+				break;
+			case "rank":
+		%>
+			<jsp:include page="rank.jsp" />
+		<%
+				break;
+			default:
+		%>
+			<jsp:include page="_index.jsp" />
+		<%
+				break;
 			}
 		%>
 		</section>
