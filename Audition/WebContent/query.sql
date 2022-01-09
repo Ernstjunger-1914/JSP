@@ -52,5 +52,6 @@ commit;
 select artist_id, artist_name, substr(artist_birth, 1, 4)||'년'||substr(artist_birth, 5, 2)||'월'||substr(artist_birth, 8, 2)||'일' as birth, decode(artist_gender, 'F', '여', 'M', '남') as gen, decode(talent, '1', '보컬', '2', '댄스', '3', '랩') as tal, agency from tbl_artist_201905;
 
 select serial_no, a.artist_id, artist_name, substr(artist_birth, 1, 4)||'년'||substr(artist_birth, 5, 2)||'월'||substr(artist_birth, 8, 2)||'일' as birth, point, mento_name from tbl_point_201905 p inner join tbl_artist_201905 a on a.artist_id=p.artist_id inner join tbl_mento_201905 m on m.mento_id=p.mento_id;
+select serial_no, a.artist_id, artist_name, substr(artist_birth, 1, 4)||'년'||substr(artist_birth, 5, 2)||'월'||substr(artist_birth, 8, 2)||'일' as birth, point, mento_name from tbl_point_201905 p inner join tbl_artist_201905 a on a.artist_id=p.artist_id inner join tbl_mento_201905 m on m.mento_id=p.mento_id order by serial_no;
 
 select a.artist_id, artist_name, sum(point) as sum, to_char(avg(point), '99.99') as avg, rank() over(order by sum(point) desc) from tbl_artist_201905 a inner join tbl_point_201905 p on a.artist_id=p.artist_id group by a.artist_id, artist_name;
