@@ -20,6 +20,33 @@
 		<jsp:include page="header.jsp" />
 		<jsp:include page="nav.jsp" />
 		
+		<section>
+		<%
+			switch(section) {
+			case "insert":
+		%>
+			<jsp:include page="insert.jsp" />	
+		<%
+				break;
+			case "supdate":
+		%>
+			<jsp:include page="supdate.jsp" />
+		<%
+				break;
+			case "select":
+		%>
+			<jsp:include page="select.jsp" />
+		<%
+				break;
+			default:
+		%>
+			<jsp:include page="_index.jsp" />
+		<%
+				break;
+			}
+		%>
+		</section>
+		
 		<jsp:include page="footer.jsp" >
 	</body>
 </html>
