@@ -41,3 +41,9 @@ insert into money_tbl_02 values(100004, 20210009, 600, 1,  600, 'A006', '2016010
 insert into money_tbl_02 values(100004, 20210010, 3000, 1,  3000, 'A007', '20160106');
 
 commit;
+
+select custno, custname, phone, address, to_char(joindate, 'yyyy-mm-dd') as dt, decode(grade, 'A', 'VIP', 'B', '일 반', 'C', '직원') as grade, city from member_tbl_02;
+
+select mt.custno, mt.custname, decode(grade, 'A', 'VIP', 'B', '일반', 'C', '직원') as grade, sum(price) from member_tbl_02 mt inner join money_tbl_02 mt2 on mt.custno=mt2.custno group by mt.custno, mt.custname, mt.grade order by sum(price) desc;
+
+update member_tbl_02 set custname='김소독', phone='010-1111-2222', address='서울 동대문구 휘경1동', joindate='20151202', grade='A', city='01' where custno='100001';

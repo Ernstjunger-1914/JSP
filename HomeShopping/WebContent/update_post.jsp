@@ -22,23 +22,24 @@
 	<body>
 		<%
 			try {
-				String sql="insert into member_tbl_02 values(?, ?, ?, ?, ?, ?, ?)";
+				String sql="update member_tbl_02 set custname=?, phone=?, address=?, joindate=?, grade=?, city=? where custno=?";
 				PreparedStatement pstmt=con.prepareStatement(sql);
 				
-				pstmt.setString(1, costno);
-				pstmt.setString(2, cname);
-				pstmt.setString(3, phone);
+				pstmt.setString(1, cname);
+				pstmt.setString(2, phone);
+				pstmt.setString(3, address);
 				pstmt.setString(4, address);
 				pstmt.setString(5, joindate);
 				pstmt.setString(6, grade);
 				pstmt.setString(7, city);
+				pstmt.setString(8, costno);
 				
-				pstmt.executeUpdate();
+				pstmt.executeQuery();
 				con.close();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
-			response.sendRedirect("index.jsp?");
+			response.sendRedirect("index.jsp?section=supdate");
 		%>
 	</body>
 </html>
