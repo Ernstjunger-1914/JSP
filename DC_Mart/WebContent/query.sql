@@ -50,8 +50,9 @@ insert into tbl_order_202101 values('20210015', 'AA02', '20211205', 'S002', 60);
 
 commit;
 
-select substr(orderno, 1, 4)||'-'||substr(orderno, 5, 6) as orderno, p.pcode, pname, o.shopno, shopname, substr(orderdate, 1, 4)||'-'||substr(orderdate, 5, 2)||'-'||substr(orderdate, 7, 2) as dt, cost, amount, to_char(cost*amount, '999,999') as total, to_char(decode(s.shopno, 'S001', cost*amount*0.9, 'S002', cost*amount*0.85, 'S003', cost*amount*0.9, 'S004', cost*amount*0.85), '999,999') as dc from tbl_shop_202101 s inner join tbl_order_202101 o on s.shopno=o.shopno inner join tbl_product_202101 p on p.pcode=o.pcode;
+select substr(orderno, 1, 4)||'-'||substr(orderno, 5, 6) as orderno, p.pcode, pname, o.shopno, shopname, substr(orderdate, 1, 4)||'-'||substr(orderdate, 5, 2)||'-'||substr(orderdate, 7, 2) as dt, cost, amount, to_char(cost*amount, '999,999') as total, to_char(decode(s.shopno, 'S001', cost*amount*0.9, 'S002', cost*amount*0.85, 'S003', cost*amount*0.9, 'S004', cost*amount*0.85), '999,999') as dc from tbl_shop_202101 s inner join tbl_order_202101 o on s.shopno=o.shopno inner join tbl_product_202101 p on p.pcode=o.pcode order by orderno;
 
 select o.pcode, o.shopno, pname, amount from tbl_product_202101 p inner join tbl_order_202101 o on p.pcode=o.pcode order by o.shopno, o.pcode;
 
 select p.pcode, to_char(cost, '999,999') as cost, to_char(cost*0.9, '999,999') as dc10, to_char(cost*0.85, '999,999') as dc15 from tbl_product_202101 p;
+select p.pcode, pname, to_char(cost, '999,999') as cost, to_char(cost*0.9, '999,999') as dc10, to_char(cost*0.85, '999,999') as dc15 from tbl_product_202101 p;

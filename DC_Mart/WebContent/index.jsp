@@ -31,11 +31,6 @@
 			<jsp:include page="select.jsp" />
 		<%
 				break;
-			case "sselect":
-		%>
-			<jsp:include page="sselect.jsp" />
-		<%
-				break;
 			case "dselect":
 		%>
 			<jsp:include page="dselect.jsp" />
@@ -45,6 +40,7 @@
 		%>
 			<jsp:include page="_index.jsp" />
 		<%
+				break;
 			}
 		%>
 		</section>
