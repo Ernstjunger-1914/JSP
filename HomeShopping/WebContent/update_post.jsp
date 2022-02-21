@@ -34,7 +34,7 @@
 				pstmt.setString(7, city);
 				pstmt.setString(8, costno);
 				
-				pstmt.executeQuery();
+				pstmt.executeUpdate();
 				con.close();
 			} catch(Exception e) {
 				e.printStackTrace();
